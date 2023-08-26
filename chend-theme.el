@@ -8,14 +8,14 @@
 
 ;;; Code:
 
-(deftheme chend
-    "Color theme from Chend.")
+(deftheme chend-theme
+    "Color theme.")
 
 (let ((class '((class color) (min-colors 88) (background light)))
       ;; (chend-bg "#ffffff")
       (chend-bg "#1b2b34")
       ;; (chend-fg "#000000")
-      (chend-fg "#d8dee9")
+      (chend-fg "#FAC863")
       (chend-const "#110099")
       (chend-comment "#3F7F5F")
       (chend-error "#FF0000")
