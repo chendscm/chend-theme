@@ -1,77 +1,77 @@
-;;; chend-theme.el
+;;; zen-theme.el
 
 ;;; Commentary:
 ;;
 ;; This theme assumes light background.  To load it, use:
 ;;
-;;     (require 'chend-theme)
+;;     (require 'zen-theme)
 
 ;;; Code:
 
-(deftheme chend-theme
+(deftheme zen
     "Color theme.")
 
 (let ((class '((class color) (min-colors 88) (background light)))
-      ;; (chend-bg "#ffffff")
-      (chend-bg "#1b2b34")
-      ;; (chend-fg "#000000")
-      (chend-fg "#FAC863")
-      (chend-const "#110099")
-      (chend-comment "#3F7F5F")
-      (chend-error "#FF0000")
-      (chend-builtin "#7F0055")
-      (chend-string "#2A00FF")
-      (chend-blue-3 "#758BC6")
-      (chend-region "#f9b593")
-      (chend-shadow "grey50"))
-  (apply 'custom-theme-set-faces 'chend
+      ;; (zen-bg "#ffffff")
+      (zen-bg "#1b2b34")
+      ;; (zen-fg "#000000")
+      (zen-fg "#FAC863")
+      (zen-const "#110099")
+      (zen-comment "#3F7F5F")
+      (zen-error "#FF0000")
+      (zen-builtin "#7F0055")
+      (zen-string "#2A00FF")
+      (zen-blue-3 "#758BC6")
+      (zen-region "#f9b593")
+      (zen-shadow "grey50"))
+  (apply 'custom-theme-set-faces 'zen
          (mapcar
           (lambda (x) `(,(car x) ((,class ,(cdr x)))))
-          `((default :foreground ,chend-fg :background ,chend-bg)
-            (cursor :background ,chend-fg)
-            (shadow :foreground ,chend-shadow)
-            (success :foreground ,chend-error)
-            (error :foreground ,chend-error :weight bold)
+          `((default :foreground ,zen-fg :background ,zen-bg)
+            (cursor :background ,zen-fg)
+            (shadow :foreground ,zen-shadow)
+            (success :foreground ,zen-error)
+            (error :foreground ,zen-error :weight bold)
             (warning :foreground "DarkOrange" :weight bold)
             (compilation-warning :underline t :inherit warning)
             (compilation-error :underline t :inherit error)
-            (compilation-info :underline t :foreground ,chend-const)
+            (compilation-info :underline t :foreground ,zen-const)
             (highlight :background "darkseagreen2")
-            (fringe :background ,chend-bg)
-            (region :background ,chend-region :foreground ,chend-bg :extend t)
+            (fringe :background ,zen-bg)
+            (region :background ,zen-region :foreground ,zen-bg :extend t)
             (secondary-selection :background "#333366" :foreground "#f6f3e8")
             (whitespace-indentation :background "LightYellow" :foreground "lightgray")
             (term)
             ;; (font-lock-negation-char-face :foreground "#e8e2b7")
-            (font-lock-builtin-face :foreground ,chend-builtin :bold t)
-            (font-lock-comment-face :foreground ,chend-comment :slant normal)
-            (font-lock-comment-delimiter-face :foreground ,chend-comment :slant normal)
-            (font-lock-constant-face :foreground ,chend-const)
-            (font-lock-doc-face :foreground ,chend-string)
-            (font-lock-doc-string-face :foreground ,chend-string)
-            (font-lock-function-name-face :foreground ,chend-fg :bold t)
-            (font-lock-keyword-face :foreground ,chend-builtin :weight bold)
-            (font-lock-preprocessor-face :foreground ,chend-builtin :bold t)
-            (font-lock-regexp-grouping-backslash :foreground ,chend-builtin)
-            (font-lock-regexp-grouping-construct :foreground ,chend-builtin)
-            (font-lock-string-face :foreground ,chend-string)
-            (font-lock-type-face :foreground ,chend-fg :underline t :slant italic)
-            (font-lock-variable-name-face :foreground ,chend-fg)
-            (font-lock-warning-face :foreground ,chend-error)
+            (font-lock-builtin-face :foreground ,zen-builtin :bold t)
+            (font-lock-comment-face :foreground ,zen-comment :slant normal)
+            (font-lock-comment-delimiter-face :foreground ,zen-comment :slant normal)
+            (font-lock-constant-face :foreground ,zen-const)
+            (font-lock-doc-face :foreground ,zen-string)
+            (font-lock-doc-string-face :foreground ,zen-string)
+            (font-lock-function-name-face :foreground ,zen-fg :bold t)
+            (font-lock-keyword-face :foreground ,zen-builtin :weight bold)
+            (font-lock-preprocessor-face :foreground ,zen-builtin :bold t)
+            (font-lock-regexp-grouping-backslash :foreground ,zen-builtin)
+            (font-lock-regexp-grouping-construct :foreground ,zen-builtin)
+            (font-lock-string-face :foreground ,zen-string)
+            (font-lock-type-face :foreground ,zen-fg :underline t :slant italic)
+            (font-lock-variable-name-face :foreground ,zen-fg)
+            (font-lock-warning-face :foreground ,zen-error)
             (font-lock-doxygen-face :foreground "SaddleBrown" :background "#f7f7f7")
-            (org-code :foreground ,chend-builtin :weight bold)
-            (org-verbatim :foreground ,chend-const)
+            (org-code :foreground ,zen-builtin :weight bold)
+            (org-verbatim :foreground ,zen-const)
             (org-level-1 :weight bold :foreground "black")
-            (org-level-2 :foreground ,chend-builtin)
+            (org-level-2 :foreground ,zen-builtin)
             (org-level-3 :foreground "#123555")
             (org-level-4 :slant normal :foreground "#E3258D")
             (org-level-5 :slant normal :foreground "#0077CC")
             (org-level-6 :slant italic :foreground "#EA6300")
             (org-level-7 :slant italic :foreground "#2EAE2C")
             (org-level-8 :slant italic :foreground "#FD8008")
-            (org-block-begin-line :foreground ,chend-const)
-            (org-block-end-line :foreground ,chend-const)
-            (org-scheduled-previously :foreground ,chend-comment)
+            (org-block-begin-line :foreground ,zen-const)
+            (org-block-end-line :foreground ,zen-const)
+            (org-scheduled-previously :foreground ,zen-comment)
             (ido-subdir :weight bold)
             (mode-line :foreground "black" :background "#f9b593" :box nil)
             (mode-line-inactive :foreground "grey20" :background "grey90" :box nil)
@@ -83,8 +83,8 @@
             (isearch :background "magenta3" :foreground "lightskyblue1")
             (link :foreground "RoyalBlue3" :underline t)
             ;; other packages
-            (helm-locate-finish :foreground ,chend-const)
-            (aw-mode-line-face :foreground ,chend-string)
+            (helm-locate-finish :foreground ,zen-const)
+            (aw-mode-line-face :foreground ,zen-string)
             (swiper-match-face-1 :background "#FEEA89")
             (swiper-match-face-2 :background "#fb7905")
             (swiper-match-face-3 :background "#F9A35A")
@@ -118,11 +118,11 @@
             (mu4e-modeline-face :foreground "white")
             (ivy-highlight-face)
             (ivy-posframe :background "#eeeeee" :foreground "#000000")
-            (wgrep-face :foreground ,chend-comment)
+            (wgrep-face :foreground ,zen-comment)
             (cider-instrumented-face)))))
 
 (custom-theme-set-variables
- 'chend
+ 'zen
  '(ansi-color-names-vector ["#242424" "#e5786d" "#95e454" "#cae682"
                             "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"]))
 
@@ -133,6 +133,6 @@
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
 
-(provide 'chend-theme)
+(provide 'zen-theme)
 
-;;; chend-theme.el ends here
+;;; zen-theme.el ends here
