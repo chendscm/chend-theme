@@ -13,7 +13,8 @@
 
 (let ((class '((class color) (min-colors 88) (background light)))
       ;; (zen-bg "#ffffff")
-      (zen-bg "#1b2b34")
+      ;; (zen-bg "#1b2b34")
+      (zen-bg "#000000")
       ;; (zen-fg "#000000")
       (zen-fg "#FAC863")
       (zen-const "#110099")
