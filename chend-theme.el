@@ -1,7 +1,7 @@
 (require 'cl-lib)
 
 (defgroup chend-themes nil
-  "Options for lazycat-themes."
+  "Options for chend-themes."
   :group 'faces)
 
 (defcustom chend-themes-padded-modeline nil
@@ -283,7 +283,7 @@ theme face specs. These is a simplified spec. For example:
                              collect `(,var ',val)))
              (list ,@(mapcar #'chend-themes--build-face faces))))))
 
-(defmacro def-lazycat-theme (name docstring defs &optional extra-faces extra-vars)
+(defmacro def-chend-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a CHEND theme, named NAME (a symbol)."
   (declare (doc-string 2))
   (let ((chend-themes--colors defs))
@@ -1713,5 +1713,22 @@ theme face specs. These is a simplified spec. For example:
     (if (eq bg-mode 'dark)
         (chend-theme-load-light)
       (chend-theme-load-dark))))
+
+(defun chend-theme-is-day ()
+  (let ((current-hour (string-to-number (format-time-string "%H"))))
+    (and (> current-hour 7)
+         (< current-hour 18))))
+
+(defun chend-theme-load ()
+  (if (chend-theme-is-day)
+      (when (or (string-equal chend-theme-status "init")
+                (string-equal chend-theme-status "dark"))
+        (chend-theme-load-light))
+    (when (or (string-equal chend-theme-status "init")
+              (string-equal chend-theme-status "light"))
+      (chend-theme-load-dark))))
+
+(defun chend-theme-load-with-sunrise ()
+  (run-with-timer 0 (* 60 60) 'chend-theme-load))
 
 (provide 'chend-theme)
